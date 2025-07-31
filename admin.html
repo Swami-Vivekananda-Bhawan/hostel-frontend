@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard - Hostel 11</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Style.css" />
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav class="nav-bar">
+        <a href="#" class="name">Admin Dashboard</a>
+        <div>
+          <a href="index.html" class="content">Home Page</a>
+          <button id="logout-btn" class="content logout-button">Logout</button>
+        </div>
+      </nav>
+    </header>
+
+    <main class="admin-main-full">
+      <div class="admin-container">
+        <!-- Tabs Navigation -->
+        <div class="tabs">
+          <button class="tab-link active" data-tab="leaves">
+            <i class="fas fa-calendar-alt"></i> Leave Requests
+          </button>
+          <button class="tab-link" data-tab="complaints">
+            <i class="fas fa-exclamation-triangle"></i> Complaints
+          </button>
+          <button class="tab-link" data-tab="chat">
+            <i class="fas fa-question-circle"></i> Student Q&A
+          </button>
+          <button class="tab-link" data-tab="students">
+            <i class="fas fa-users"></i> Students
+          </button>
+          <button class="tab-link" data-tab="profile">
+            <i class="fas fa-user-cog"></i> Profile
+          </button>
+        </div>
+
+        <!-- Leave Requests Tab -->
+        <div id="leaves" class="tab-content" style="display: block">
+          <div class="tab-header">
+            <h2 class="section-title">Manage Leave Requests</h2>
+            <input
+              type="text"
+              id="leave-search"
+              class="search-bar"
+              placeholder="Search by name or scholar number..."
+            />
+          </div>
+          <div class="table-container" id="leaves-table-container">
+            <!-- Data will be injected here by JS -->
+          </div>
+        </div>
+
+        <!-- Complaints Tab -->
+        <div id="complaints" class="tab-content">
+          <div class="tab-header">
+            <h2 class="section-title">Manage Complaints</h2>
+            <input
+              type="text"
+              id="complaint-search"
+              class="search-bar"
+              placeholder="Search by name, scholar, or category..."
+            />
+          </div>
+          <div class="table-container" id="complaints-table-container">
+            <!-- Data will be injected here by JS -->
+          </div>
+        </div>
+
+        <!-- Q&A Tab -->
+        <div id="chat" class="tab-content">
+          <div class="tab-header">
+            <h2 class="section-title">Student Questions</h2>
+            <div>
+              <input
+                type="text"
+                id="admin-qna-search"
+                class="search-bar"
+                placeholder="Search by student or question..."
+              />
+              <div class="qna-sub-tabs">
+                <button class="qna-tab-btn active" data-view="unanswered">
+                  Unanswered
+                </button>
+                <button class="qna-tab-btn" data-view="all">
+                  All Questions
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="qna-layout">
+            <div class="question-list-container">
+              <div id="questions-list" class="question-list">
+                <!-- Questions will be loaded here -->
+              </div>
+            </div>
+            <div class="qna-main-panel">
+              <div id="question-display" class="question-display">
+                <p class="no-data">Select a question to view and answer.</p>
+              </div>
+              <form id="answer-form" class="answer-form" style="display: none">
+                <textarea
+                  id="answer-input"
+                  placeholder="Type your answer here..."
+                ></textarea>
+                <button type="submit">Send Answer</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Students Tab -->
+        <div id="students" class="tab-content">
+          <div class="tab-header">
+            <h2 class="section-title">Registered Students List</h2>
+            <div>
+              <input
+                type="text"
+                id="student-search"
+                class="search-bar"
+                placeholder="Search students..."
+              />
+              <button id="bulk-add-btn" class="add-new-btn secondary">
+                <i class="fas fa-file-import"></i> Bulk Add
+              </button>
+              <button id="add-student-btn" class="add-new-btn">
+                <i class="fas fa-plus"></i> Add Student
+              </button>
+            </div>
+          </div>
+          <div class="table-container" id="students-table-container">
+            <!-- Student list will be injected here by JS -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 id="confirm-title" class="modal-title">Confirm Action</h3>
+        <p id="confirm-message">Are you sure you want to proceed?</p>
+        <div class="prompt-buttons">
+          <button id="confirm-yes-btn" class="submit-button">Yes</button>
+          <button id="confirm-no-btn" class="close-button">No</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Add Student Modal -->
+    <div id="add-student-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 class="modal-title">Add New Student Record</h3>
+        <p class="section-subtitle" style="margin-bottom: 1rem">
+          The student will create their own account later.
+        </p>
+        <form id="add-student-form">
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" name="fullName" required />
+          </div>
+          <div class="form-group">
+            <label for="scholarNumber">Scholar Number</label>
+            <input
+              type="text"
+              id="scholarNumber"
+              name="scholarNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="tel" id="mobileNumber" name="mobileNumber" />
+          </div>
+          <div class="form-group">
+            <label for="roomNumber">Room Number</label>
+            <input type="text" id="roomNumber" name="roomNumber" />
+          </div>
+          <div class="prompt-buttons">
+            <button type="submit" class="submit-button">Save Record</button>
+            <button
+              type="button"
+              id="add-student-close-btn"
+              class="close-button"
+            >
+              Cancel
+            </button>
+          </div>
+          <p id="add-student-error" class="login-error-message"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Edit Student Modal -->
+    <div id="edit-student-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 class="modal-title">Edit Student Details</h3>
+        <form id="edit-student-form">
+          <input type="hidden" id="edit-student-id" name="studentId" />
+          <div class="form-group">
+            <label for="edit-fullName">Full Name</label>
+            <input type="text" id="edit-fullName" name="fullName" required />
+          </div>
+          <div class="form-group">
+            <label for="edit-scholarNumber">Scholar Number</label>
+            <input
+              type="text"
+              id="edit-scholarNumber"
+              name="scholarNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-mobileNumber">Mobile Number</label>
+            <input
+              type="tel"
+              id="edit-mobileNumber"
+              name="mobileNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-roomNumber">Room Number</label>
+            <input
+              type="text"
+              id="edit-roomNumber"
+              name="roomNumber"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="edit-email">Email</label>
+            <input type="email" id="edit-email" name="email" />
+          </div>
+          <div class="prompt-buttons">
+            <button type="submit" class="submit-button">Update Details</button>
+            <button
+              type="button"
+              id="edit-student-close-btn"
+              class="close-button"
+            >
+              Cancel
+            </button>
+          </div>
+          <p id="edit-student-error" class="login-error-message"></p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Bulk Add Student Modal -->
+    <div id="bulk-add-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 class="modal-title">Bulk Add Students</h3>
+        <p class="section-subtitle" style="margin-bottom: 1rem">
+          Upload an Excel file. Columns must be in order: Name, Scholar, Mobile,
+          Room.
+        </p>
+        <div class="bulk-add-container">
+          <input type="file" id="bulk-file-input" accept=".xlsx, .xls, .csv" />
+        </div>
+        <div class="prompt-buttons">
+          <button id="bulk-submit-btn" class="submit-button">
+            Add Students
+          </button>
+          <button type="button" id="bulk-add-close-btn" class="close-button">
+            Cancel
+          </button>
+        </div>
+        <p id="bulk-add-message" class="login-error-message"></p>
+      </div>
+    </div>
+
+    <!-- Profile Tab -->
+    <div id="profile" class="tab-content">
+      <div class="form-container" style="max-width: 600px; margin: 0 auto">
+        <h2 class="section-title" style="margin-bottom: 2rem">
+          Admin Profile Settings
+        </h2>
+        <form id="profile-form">
+          <div class="form-group">
+            <label for="profile-email">Admin Email (Username)</label>
+            <input type="email" id="profile-email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="profile-password"
+              >New Password (leave blank to keep current)</label
+            >
+            <input
+              type="password"
+              id="profile-password"
+              name="password"
+              placeholder="Enter new password..."
+            />
+          </div>
+          <div class="form-group">
+            <label for="profile-confirm-password">Confirm New Password</label>
+            <input
+              type="password"
+              id="profile-confirm-password"
+              placeholder="Confirm new password..."
+            />
+          </div>
+          <button type="submit" class="submit-button">Update Profile</button>
+          <p id="profile-message" class="login-error-message"></p>
+        </form>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>

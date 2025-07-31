@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="Style.css" />
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+
+    <title>Hostel 11 - Swami Vivekananda Bhawan</title>
+  </head>
+  <body class="body">
+    <header class="header">
+      <nav class="nav-bar">
+        <a href="#" class="name">Hostel 11</a>
+        <div class="div-content hidden md:flex">
+          <a href="#home" class="content">Home</a>
+          <a href="#leave-request" class="content">Leave</a>
+          <a href="#complaints" class="content">Complaints</a>
+          <a href="#qna-section" class="content">Ask a Question</a>
+          <div id="auth-container" class="auth-container">
+            <a href="login.html" id="login-link" class="content">Login</a>
+            <div id="user-info" class="user-info" style="display: none">
+              <div id="notification-bell" class="notification-bell">
+                <i class="fas fa-bell"></i>
+                <span
+                  id="notification-count"
+                  class="notification-count"
+                  style="display: none"
+                  >0</span
+                >
+                <div
+                  id="notification-dropdown"
+                  class="notification-dropdown"
+                ></div>
+              </div>
+              <span id="user-name"></span>
+              <a
+                href="admin.html"
+                id="admin-panel-btn"
+                class="admin-panel-button"
+                style="display: none"
+                >Admin Panel</a
+              >
+              <button id="logout-btn" class="logout-button">Logout</button>
+            </div>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-button">
+            <i class="fas fa-bars fa-lg"></i>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-menu" class="md:hidden">
+        <a href="#home" class="mobile-menu-content">Home</a>
+        <a href="#leave-request" class="mobile-menu-content">Leave</a>
+        <a href="#complaints" class="mobile-menu-content">Complaints</a>
+        <a href="#qna-section" class="mobile-menu-content">Any Question</a>
+        <a
+          href="admin.html"
+          id="admin-panel-btn"
+          class="admin-panel-button"
+          style="display: none"
+          >Admin Panel</a
+        >
+
+        <a href="login.html" id="mobile-login-link" class="mobile-menu-content"
+          >Login</a
+        >
+      </div>
+    </header>
+
+    <section id="home">
+      <div class="hero-content">
+        <h1>Welcome to Swami Vivekananda Bhawan</h1>
+        <p>
+          This isn't just a hostel; it's your second home at MANIT, where
+          friendships are forged and futures are built.
+        </p>
+      </div>
+    </section>
+
+    <section id="leave-request" class="py-20">
+      <div class="container">
+        <h2 class="section-title">Hostel Leave Application</h2>
+        <p class="section-subtitle">
+          Please fill out the form below to request leave. All requests are
+          subject to approval by the hostel warden.
+        </p>
+        <div class="form-container">
+          <form id="leave-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="leave-student-name">Full Name</label>
+                <input
+                  type="text"
+                  id="leave-student-name"
+                  name="student-name"
+                  placeholder="Login to auto-fill"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="leave-scholar-number">Scholar Number</label>
+                <input
+                  type="text"
+                  id="leave-scholar-number"
+                  name="scholar-number"
+                  placeholder="Login to auto-fill"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="mobile-number-leave">Mobile Number</label>
+                <input
+                  type="tel"
+                  id="mobile-number-leave"
+                  name="mobile-number"
+                  placeholder="Your Mobile Number"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="room-number">Room Number</label>
+                <input
+                  type="text"
+                  id="room-number"
+                  name="room-number"
+                  placeholder="e.g., A-101"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="start-date">Leave Start Date</label>
+                <input type="date" id="start-date" name="start-date" required />
+              </div>
+              <div class="form-group">
+                <label for="end-date">Leave End Date</label>
+                <input type="date" id="end-date" name="end-date" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="leave-reason">Reason for Leave</label>
+              <textarea
+                id="leave-reason"
+                name="reason"
+                rows="4"
+                placeholder="e.g., Family function, medical appointment..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="leave-address">Address During Leave</label>
+              <textarea
+                id="leave-address"
+                name="address"
+                rows="2"
+                placeholder="The full address where you will be staying"
+                required
+              ></textarea>
+            </div>
+            <button type="submit" class="submit-button">
+              Submit Leave Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="complaints">
+      <div class="container">
+        <h2 class="section-title">Student Complaint Box</h2>
+        <p class="section-subtitle">
+          We value your feedback. Please use the form below to report any issues
+          or concerns you may have.
+        </p>
+        <div class="form-container">
+          <form id="complaint-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="complaint-student-name">Full Name</label>
+                <input
+                  type="text"
+                  id="complaint-student-name"
+                  name="student-name"
+                  placeholder="Login to auto-fill"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="complaint-scholar-number">Scholar Number</label>
+                <input
+                  type="text"
+                  id="complaint-scholar-number"
+                  name="scholar-number"
+                  placeholder="Login to auto-fill"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="complaint-room">Room Number</label>
+                <input
+                  type="text"
+                  id="complaint-room"
+                  name="room-number"
+                  placeholder="e.g., D-201"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="mobile-number-complaint">Mobile Number</label>
+                <input
+                  type="tel"
+                  id="mobile-number-complaint"
+                  name="mobile-number"
+                  placeholder="Your Mobile Number"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="complaint-category">Complaint Category</label>
+              <select id="complaint-category" name="category" required>
+                <option value="" disabled selected>Select a category</option>
+                <option>Maintenance</option>
+                <option>Cleanliness</option>
+                <option>Noise Complaint</option>
+                <option>Internet Issue</option>
+                <option>Water Cooler</option>
+                <option>Mess</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="complaint-message">Detailed Complaint</label>
+              <textarea
+                id="complaint-message"
+                name="message"
+                rows="5"
+                placeholder="Please describe the issue in detail..."
+                required
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="complaint-media">Upload Photo/Video (Optional)</label>
+              <input
+                type="file"
+                id="complaint-media"
+                name="media"
+                accept="image/*,video/*"
+              />
+            </div>
+            <button type="submit" class="submit-button">
+              Submit Complaint
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATED: Contact section is now Q&A -->
+    <section id="qna-section">
+      <div class="container">
+        <h2 class="section-title">Ask a Question</h2>
+        <p class="section-subtitle">
+          Have a question? Ask the hostel administration directly.
+        </p>
+        <div id="qna-container" class="qna-container">
+          <div id="qna-login-prompt" class="chat-login-prompt">
+            <p>Please <a href="login.html">login</a> to ask questions.</p>
+          </div>
+          <div id="qna-window" class="qna-window" style="display: none">
+            <form id="question-form" class="question-form">
+              <textarea
+                id="question-input"
+                placeholder="Type your question here..."
+                required
+              ></textarea>
+              <button type="submit">Ask Question</button>
+            </form>
+            <div id="qna-history" class="qna-history">
+              <h3>Your Past Questions</h3>
+
+              <div id="history-list"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <div class="social-links"></div>
+        <p class="copyright">© 2025 Hostel 11. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <div id="status-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 id="modal-title"></h3>
+        <p id="modal-message"></p>
+        <button id="modal-close-btn" class="submit-button">Close</button>
+      </div>
+    </div>
+
+    <!-- Login Prompt Modal -->
+    <div id="login-prompt-modal" class="modal-overlay">
+      <div class="modal-content">
+        <h3 id="modal-title">Login Required</h3>
+        <p id="modal-message">You must be logged in to access this form.</p>
+        <div class="prompt-buttons">
+          <a href="login.html" class="submit-button">Go to Login</a>
+          <button id="prompt-close-btn" class="close-button">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="qna.js"></script>
+  </body>
+</html>

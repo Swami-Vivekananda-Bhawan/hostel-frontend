@@ -1,0 +1,1436 @@
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(243 244 246);
+}
+
+/* Header Styles */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-bar {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #4f46e5;
+}
+
+.div-content {
+  display: none;
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .div-content {
+    display: flex;
+  }
+}
+
+.content {
+  color: #4b5563;
+  transition: color 0.3s ease;
+}
+
+.content:hover {
+  color: #4f46e5;
+}
+
+@media (min-width: 768px) {
+  .div-mobile-menu-button {
+    display: none;
+  }
+}
+
+#mobile-menu-button {
+  color: #1f2937;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#mobile-menu {
+  display: none;
+  background-color: #ffffff;
+  padding: 1rem 0;
+}
+
+.mobile-menu-content {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  color: #4b5563;
+}
+
+.mobile-menu-content:hover {
+  background-color: #eef2ff;
+  color: #4f46e5;
+}
+
+/* Hero Section */
+#home {
+  background-color: rgb(86, 101, 115);
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 4rem 1.5rem 0 1.5rem;
+}
+
+#home h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+}
+
+#home p {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#home a {
+  display: inline-block;
+  background-color: #4f46e5;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1.125rem;
+  transition: background-color 0.3s ease;
+}
+
+#home a:hover {
+  background-color: #4338ca;
+}
+
+@media (min-width: 768px) {
+  #home h1 {
+    font-size: 3.75rem;
+  }
+
+  #home p {
+    font-size: 1.25rem;
+  }
+}
+
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: rgb(243 244 246);
+}
+
+/* Header Styles */
+.header {
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 50;
+}
+
+.nav-bar {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+#home {
+  /* YAHAN BADLAV KIYA GAYA HAI */
+  /* Apni image ka naam 'your-image-name.jpg' ki jagah daalein */
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('H11pick_page-0001.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-align: center;
+  padding: 4rem 1.5rem 0 1.5rem;
+}
+
+#home h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5); /* Text ko behtar dikhane ke liye shadow */
+}
+
+#home p {
+  font-size: 1.125rem;
+  color: #e5e7eb;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5); /* Text ko behtar dikhane ke liye shadow */
+}
+
+/* General Section Styles */
+section {
+  padding: 5rem 1.5rem;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 1024px;
+}
+
+.section-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #4b5563;
+  margin: 0 auto 3rem auto;
+  max-width: 42rem;
+}
+
+/* About Us Section */
+#about {
+  background-color: #ffffff;
+}
+
+#about p {
+  color: #4b5563;
+  text-align: center;
+  max-width: 48rem;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Facilities Section */
+#amenities {
+  background-color: #f9fafb;
+}
+
+#amenities .container {
+  max-width: 1280px;
+}
+
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  text-align: center;
+}
+
+.amenity-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.amenity-item h3 {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.icon-background {
+  background-color: #e0e7ff;
+  padding: 1rem;
+  border-radius: 50%;
+  display: inline-flex;
+}
+
+.icon-background i {
+  font-size: 2em;
+  color: #4f46e5;
+}
+
+@media (min-width: 768px) {
+  .amenities-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1024px) {
+  .amenities-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* Form Sections (Leave & Complaints) */
+.form-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  color: #374151;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+  appearance: none; /* For select dropdown */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  --tw-ring-color: rgb(99 102 241 / 0.5);
+  box-shadow: 0 0 0 3px var(--tw-ring-color);
+  border-color: #4f46e5;
+}
+
+.submit-button {
+  width: 100%;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+/* Leave Form Specifics */
+#leave-request .submit-button {
+  background-color: #4f46e5;
+}
+#leave-request .submit-button:hover {
+  background-color: #4338ca;
+}
+
+/* Complaint Form Specifics */
+#complaints {
+  background-color: #ffffff;
+}
+#complaints .submit-button {
+  background-color: #dc2626;
+}
+#complaints .submit-button:hover {
+  background-color: #b91c1c;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #f9fafb;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.contact-column {
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .contact-column {
+    flex: 1;
+  }
+}
+
+.contact-card {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  height: 100%;
+}
+
+.contact-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.contact-card .submit-button {
+  background-color: #4f46e5;
+}
+
+.contact-card .submit-button:hover {
+  background-color: #4338ca;
+}
+
+.contact-detail {
+  color: #4b5563;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.contact-detail i {
+  color: #4f46e5;
+  padding-top: 0.25rem;
+}
+
+.map-container {
+  height: 16rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+/* Footer Styles */
+.site-footer {
+  background-color: #1f2937;
+  color: #ffffff;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.social-links {
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  margin: 0 0.75rem;
+  color: #9ca3af;
+  transition: color 0.15s ease-in-out;
+  font-size: 1.25rem;
+}
+
+.social-links a:hover {
+  color: #ffffff;
+}
+
+.copyright {
+  font-size: 1rem;
+  color: #9ca3af;
+}
+
+/* Modal Styles */
+.modal-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-overlay.active {
+  display: flex; /* Shown when active */
+}
+
+.modal-content {
+  background-color: #ffffff;
+  margin: auto;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content.success #modal-title {
+  color: #16a34a; /* Green for success */
+}
+
+.modal-content.error #modal-title {
+  color: #dc2626; /* Red for error */
+}
+
+#modal-message {
+  color: #4b5563;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#modal-close-btn {
+  width: auto;
+  padding: 0.5rem 1.5rem;
+  background-color: #4b5563;
+}
+#modal-close-btn:hover {
+  background-color: #1f2937;
+}
+
+/* --- Login Page Styles --- */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #f3f4f6;
+}
+
+.login-container .form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-error-message {
+  color: #dc2626;
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.25rem;
+}
+
+/* --- Admin Dashboard Styles --- */
+.admin-main {
+  padding-top: 8rem; /* Space for fixed header */
+  padding-bottom: 4rem;
+}
+
+.tabs {
+  border-bottom: 2px solid #d1d5db;
+  margin-bottom: 2rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.tab-link {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #6b7280;
+  border-bottom: 4px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.tab-link:hover {
+  color: #111827;
+}
+
+.tab-link.active {
+  color: #4f46e5;
+  border-bottom-color: #4f46e5;
+}
+
+.min {
+  display: none;
+  animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.table-container {
+  overflow-x: auto;
+  background-color: #ffffff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background-color: #f9fafb;
+  font-weight: 700;
+  color: #374151;
+}
+
+tbody tr:hover {
+  background-color: #f3f4f6;
+}
+
+td {
+  color: #4b5563;
+  word-break: break-word;
+}
+
+.logout-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: none;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+.logout-button:hover {
+  background-color: #b91c1c;
+}
+
+/* --- Login Page Submit Button Style --- */
+
+.login-body .submit-button {
+  background-color: #4f46e5; /* Theme se milta hua Indigo color */
+  box-shadow: 0 4px 14px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.login-body .submit-button:hover {
+  background-color: #4338ca; /* Hover par thoda dark color */
+  transform: translateY(-2px); /* Halkha sa upar uthne ka effect */
+  box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+/* --- Registration Page --- */
+.register-message {
+  text-align: center;
+  margin-top: 1rem;
+  min-height: 1.25rem;
+  font-weight: 500;
+}
+.register-message.success {
+  color: #16a34a; /* Green */
+}
+.register-message.error {
+  color: #dc2626; /* Red */
+}
+.form-footer-link {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+.form-footer-link a {
+  color: #4f46e5;
+  font-weight: 500;
+  text-decoration: none;
+}
+.form-footer-link a:hover {
+  text-decoration: underline;
+}
+
+/* --- Header Auth Area --- */
+.auth-container {
+  margin-left: 2rem;
+}
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#user-name {
+  font-weight: 600;
+  color: #374151;
+}
+
+
+/* --- Login Prompt Modal Styles --- */
+.modal-overlay.active {
+  display: flex;
+}
+
+.prompt-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.prompt-buttons .submit-button {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+    text-decoration: none;
+}
+
+.prompt-buttons .close-button {
+    width: auto;
+    padding: 0.5rem 1.5rem;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+}
+.prompt-buttons .close-button:hover {
+    background-color: #4b5563;
+}
+
+
+/* --- Admin Dashboard Action Buttons & Status --- */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.action-btn {
+    padding: 0.3rem 0.8rem;
+    border: none;
+    border-radius: 0.375rem;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.875rem;
+    transition: opacity 0.2s;
+}
+
+.action-btn:hover {
+    opacity: 0.85;
+}
+
+.action-btn.approve {
+    background-color: #22c55e; /* Green */
+}
+
+.action-btn.reject {
+    background-color: #ef4444; /* Red */
+}
+
+.status {
+    padding: 0.25rem 0.6rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.status.pending {
+    background-color: #f59e0b; /* Amber */
+}
+
+.status.approved {
+    background-color: #16a34a; /* Green */
+}
+
+.status.rejected {
+    background-color: #b91c1c; /* Red */
+}
+
+
+/* --- Improved Admin Dashboard Layout --- */
+.admin-main-full {
+  padding-top: 5rem;
+  padding-bottom: 2rem;
+  background-color: #f9fafb;
+  /* min-height: 100vh; */
+}
+
+.admin-container {
+  width: 100%;
+  max-width: 90%; /* Use more screen space */
+  margin: 0 auto;
+}
+
+.tabs {
+  gap: 0;
+  border-bottom: 1px solid #d1d5db;
+}
+
+.tab-link {
+  font-size: 1rem;
+  color: #6b7280;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: #f3f4f6;
+  border: 1px solid transparent;
+  border-bottom: none;
+  margin-bottom: -1px;
+}
+
+.tab-link:hover {
+  background-color: #e5e7eb;
+}
+
+.tab-link.active {
+  background-color: #ffffff;
+  border-color: #d1d5db;
+  color: #4f46e5;
+  border-bottom: 1px solid #ffffff;
+}
+
+.tab-link i {
+  margin-right: 0.5rem;
+}
+
+.tab-content {
+  background-color: #ffffff;
+  padding: 2rem;
+  border: 1px solid #d1d5db;
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.tab-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.tab-header .section-title {
+  margin: 0;
+  text-align: left;
+}
+
+.search-bar {
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.375rem;
+  width: 100%;
+  max-width: 350px;
+}
+
+.message-cell {
+  max-width: 250px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.no-data {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-size: 1.125rem;
+}
+
+/* --- Improved Action Buttons & Status --- */
+.action-buttons {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.action-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.action-btn.approve {
+    background-color: #dcfce7;
+    color: #16a34a;
+}
+.action-btn.approve:hover {
+    background-color: #bbf7d0;
+}
+.action-btn.reject {
+    background-color: #fee2e2;
+    color: #ef4444;
+}
+.action-btn.reject:hover {
+    background-color: #fecaca;
+}
+
+/* --- Confirmation Modal --- */
+#confirmation-modal .modal-content {
+    max-width: 400px;
+}
+#confirmation-modal .submit-button {
+    background-color: #4f46e5;
+}
+
+
+/* --- Chat Component Styles --- */
+.chat-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.chat-login-prompt {
+    padding: 3rem;
+    text-align: center;
+    font-size: 1.125rem;
+}
+.chat-login-prompt a {
+    color: #4f46e5;
+    font-weight: 600;
+}
+.chat-window {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+}
+.chat-messages {
+    flex-grow: 1;
+    padding: 1.5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 1rem;
+    max-width: 75%;
+    word-wrap: break-word;
+}
+.message.sent {
+    background-color: #4f46e5;
+    color: white;
+    align-self: flex-end;
+    border-bottom-right-radius: 0.25rem;
+}
+.message.received {
+    background-color: #e5e7eb;
+    color: #1f2937;
+    align-self: flex-start;
+    border-bottom-left-radius: 0.25rem;
+}
+.chat-form {
+    display: flex;
+    border-top: 1px solid #e5e7eb;
+}
+.chat-form input {
+    flex-grow: 1;
+    border: none;
+    padding: 1.25rem;
+    font-size: 1rem;
+}
+.chat-form input:focus {
+    outline: none;
+}
+.chat-form button {
+    background-color: #4f46e5;
+    color: white;
+    border: none;
+    padding: 0 2rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.chat-form button:disabled {
+    background-color: #a5b4fc;
+    cursor: not-allowed;
+}
+
+/* --- Admin Chat Dashboard Styles --- */
+.admin-chat-layout {
+    display: flex;
+    height: 600px;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+}
+.student-list {
+    width: 300px;
+    border-right: 1px solid #e5e7eb;
+    overflow-y: auto;
+    background: #f9fafb;
+}
+.student-item {
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e7eb;
+}
+.student-item:hover {
+    background-color: #f3f4f6;
+}
+.student-name {
+    font-weight: 600;
+}
+.student-scholar {
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+.admin-chat-window {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+
+* --- Q&A Component Styles --- */
+.qna-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.question-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.question-form textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.5rem;
+    min-height: 100px;
+}
+.question-form button {
+    background-color: #4f46e5;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+.qna-history {
+    margin-top: 2rem;
+}
+.qna-item {
+    background: #fff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e5e7eb;
+}
+.qna-question {
+    font-weight: 500;
+    color: #111827;
+}
+.qna-answer {
+    color: #4b5563;
+    margin-top: 0.5rem;
+    padding-left: 1rem;
+    border-left: 3px solid #4f46e5;
+}
+
+/* --- Admin Q&A Dashboard Styles --- */
+.qna-layout {
+    display: flex;
+    height: 600px;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+.question-list-container {
+    width: 350px;
+    border-right: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+.question-list-container h3 {
+    padding: 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+    background: #f9fafb;
+}
+.question-list {
+    overflow-y: auto;
+    flex-grow: 1;
+}
+.question-item {
+    padding: 1rem;
+    cursor: pointer;
+    border-bottom: 1px solid #e5e7eb;
+}
+.question-item:hover {
+    background-color: #f3f4f6;
+}
+.question-preview {
+    font-size: 0.875rem;
+    color: #6b7280;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.qna-main-panel {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+.question-display {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+.full-question {
+    background: #f3f4f6;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-top: 0.5rem;
+}
+.answer-form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+.answer-form textarea {
+    width: 100%;
+    min-height: 120px;
+    border-radius: 0.5rem;
+    border: 1px solid #d1d5db;
+    padding: 0.75rem;
+}
+.answer-form button {
+    background-color: #16a34a;
+    color: white;
+    padding: 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+
+/* --- Q&A Sub-tabs --- */
+.qna-sub-tabs {
+    display: flex;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+.qna-tab-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.qna-tab-btn.active {
+    background-color: #ffffff;
+    color: #4f46e5;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* --- Differentiate Answered Questions --- */
+.question-item.answered {
+    background-color: #f9fafb;
+    opacity: 0.7;
+}
+.question-item.answered .student-name {
+    font-weight: normal;
+}
+
+/* --- Q&A Sub-tabs --- */
+.qna-sub-tabs {
+    display: flex;
+    background-color: #f3f4f6;
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+}
+.qna-tab-btn {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: transparent;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+.qna-tab-btn.active {
+    background-color: #ffffff;
+    color: #4f46e5;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+}
+
+/* --- Differentiate Answered Questions --- */
+.question-item.answered {
+    background-color: #f9fafb;
+    opacity: 0.7;
+}
+.question-item.answered .student-name {
+    font-weight: normal;
+}
+
+.full-question.answered {
+    background-color: #e0e7ff; /* Light blue for answered questions */
+}
+
+/* --- General Admin Table Media Link --- */
+.media-link {
+    color: #4f46e5;
+    font-weight: 500;
+    text-decoration: none;
+}
+.media-link:hover {
+    text-decoration: underline;
+}
+
+/* --- Edit Button Style in Tables --- */
+.action-btn.edit {
+    background-color: #eef2ff; /* Indigo light */
+    color: #4f46e5; /* Indigo dark */
+}
+.action-btn.edit:hover {
+    background-color: #e0e7ff;
+}
+
+
+
+/* --- Secondary Button Style --- */
+.add-new-btn.secondary {
+    background-color: #6b7280;
+}
+.add-new-btn.secondary:hover {
+    background-color: #4b5563;
+}
+
+/* --- Bulk Add Modal --- */
+#bulk-add-modal .modal-content {
+    max-width: 600px;
+}
+.bulk-add-container {
+    margin: 1rem 0;
+}
+#bulk-paste-area {
+    width: 100%;
+    min-height: 150px;
+    padding: 0.75rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+    font-family: monospace;
+}
+#bulk-file-input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #d1d5db;
+    border-radius: 0.375rem;
+}
+
+/* --- Remove Button Style in Tables --- */
+.action-btn.remove {
+    background-color: #fee2e2; /* Red light */
+    color: #ef4444; /* Red dark */
+}
+.action-btn.remove:hover {
+    background-color: #fecaca;
+}
+
+
+
+section {
+  scroll-margin-top: 80px; /* Header ki height ke anusaar isko adjust kar sakte hain */
+}
+
+/* --- Admin Panel Button Style --- */
+.admin-panel-button {
+    background-color: #1d4ed8; /* Blue color */
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.admin-panel-button:hover {
+    background-color: #1e40af;
+    color: white;
+}
+
+
+.dismiss-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 0.75rem;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dismiss-btn:hover {
+    background-color: #4b5563;
+}
+
+.dismiss-btn {
+    display: block;
+    margin-left: auto;
+    margin-top: 0.75rem;
+    background-color: #6b7280;
+    color: white;
+    border: none;
+    padding: 0.4rem 1rem;
+    border-radius: 0.375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dismiss-btn:hover {
+    background-color: #4b5563;
+}
+
+/* --- Q&A No Data Message --- */
+.no-data {
+    text-align: center;
+    padding: 2rem;
+    color: #6b7280;
+    font-size: 1rem;
+}
+
+
+.action-btn.remove {
+    background-color: #fee2e2; /* Red light */
+    color: #ef4444; /* Red dark */
+}
+.action-btn.remove:hover {
+    background-color: #fecaca;
+}
+
+
+.notification-bell { position: relative; cursor: pointer; }
+.notification-count {
+    position: absolute; top: -5px; right: -8px;
+    background-color: #ef4444; color: white;
+    border-radius: 50%; width: 20px; height: 20px;
+    font-size: 0.75rem; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+}
+.notification-dropdown {
+    display: none; position: absolute; top: 150%; right: 0;
+    width: 300px; background: white; border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb; max-height: 400px; overflow-y: auto;
+}
+.notification-dropdown.active { display: block; }
+.notification-item { padding: 1rem; border-bottom: 1px solid #f3f4f6; }
+.notification-item:last-child { border-bottom: none; }
+/* --- Complaint Action Buttons --- */
+.action-btn.resolve { background-color: #3b82f6; } /* Blue */
+
+
+.notification-bell { 
+    position: relative; 
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+.notification-bell i {
+    font-size: 1.25rem;
+    color: #4b5563;
+}
+.notification-count {
+    position: absolute; 
+    top: 0px; 
+    right: 0px;
+    background-color: #ef4444; 
+    color: white;
+    border-radius: 50%; 
+    width: 18px; 
+    height: 18px;
+    font-size: 0.7rem; 
+    font-weight: 700;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    border: 2px solid white;
+}
+.notification-dropdown {
+    display: none; 
+    position: absolute; 
+    top: 150%; 
+    right: 0;
+    width: 320px; 
+    background: white; 
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border: 1px solid #e5e7eb; 
+    max-height: 400px; 
+    overflow-y: auto;
+    z-index: 60;
+}
+.notification-dropdown.active { 
+    display: block; 
+}
+.notification-item { 
+    padding: 1rem; 
+    border-bottom: 1px solid #f3f4f6; 
+    font-size: 0.9rem;
+    color: #374151;
+}
+.notification-item:last-child { 
+    border-bottom: none; 
+}
+
+
+
+/* --- Profile Tab Styles --- */
+#profile .form-container {
+    background-color: #ffffff;
+    padding: 2.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+}
+
+#profile-message {
+    margin-top: 1rem;
+    font-weight: 500;
+    min-height: 1.25rem;
+}
+
+
+.tab-content {
+    display: none; /* Sabhi tabs ko by default hide karein */
+}
+
+#leaves.tab-content {
+    display: block; /* Sirf pehle tab ko by default dikhayein */
+}

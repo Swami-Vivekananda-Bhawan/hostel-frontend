@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Hostel 11</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="Style.css" />
+</head>
+<body class="body login-body">
+    <div class="login-container">
+        <div class="form-container">
+            <!-- Login Form (Visible by default) -->
+            <div id="login-view">
+                <h2 class="section-title">Hostel Portal Login</h2>
+                <p class="section-subtitle">Enter your credentials to access your account.</p>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required />
+                    </div>
+                    <button type="submit" class="submit-button">Login</button>
+                </form>
+                <p id="login-error" class="login-error-message"></p>
+                <div class="form-footer-link-group">
+                    <a href="#" id="show-setup-account">First time? Set up account</a>
+                    <a href="#" id="show-forgot-password">Forgot Password?</a>
+                </div>
+            </div>
+
+            <!-- Setup Account Form (Hidden) -->
+            <div id="setup-account-view" style="display: none;">
+                <h2 class="section-title">Set Up Your Account</h2>
+                <p class="section-subtitle">Enter your details to create your login.</p>
+                <form id="setup-account-form">
+                    <div class="form-group">
+                        <label for="scholarNumber">Scholar Number</label>
+                        <input type="text" id="scholarNumber" name="scholarNumber" placeholder="The scholar number given by admin" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="setup-email">Your Email</label>
+                        <input type="email" id="setup-email" name="email" placeholder="Your personal email" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="setup-password">Choose Password</label>
+                        <input type="password" id="setup-password" name="password" required />
+                    </div>
+                    <button type="submit" class="submit-button">Create Account</button>
+                </form>
+                <p id="setup-account-message" class="login-error-message"></p>
+                <div class="form-footer-link">
+                    <a href="#" class="show-login">Already have an account? Login</a>
+                </div>
+            </div>
+
+            <!-- Forgot Password Form (Hidden) -->
+            <div id="forgot-password-view" style="display: none;">
+                <h2 class="section-title">Forgot Password</h2>
+                <p class="section-subtitle">Enter your email to receive a verification code.</p>
+                <form id="forgot-password-form">
+                    <div class="form-group">
+                        <label for="forgot-email">Registered Email</label>
+                        <input type="email" id="forgot-email" name="email" required />
+                    </div>
+                    <button type="submit" class="submit-button">Send Code</button>
+                </form>
+                <p id="forgot-message" class="login-error-message"></p>
+                <div class="form-footer-link">
+                    <a href="#" class="show-login">Back to Login</a>
+                </div>
+            </div>
+
+            <!-- Reset Password Form (Hidden) -->
+            <div id="reset-password-view" style="display: none;">
+                <h2 class="section-title">Reset Password</h2>
+                <p class="section-subtitle">Enter the code and your new password.</p>
+                <form id="reset-password-form">
+                    <div class="form-group">
+                        <label for="otp">Verification Code</label>
+                        <input type="text" id="otp" name="otp" placeholder="4-digit code" required />
+                    </div>
+                    <div class="form-group">
+                        <label for="new-password">New Password</label>
+                        <input type="password" id="new-password" name="newPassword" required />
+                    </div>
+                    <button type="submit" class="submit-button">Reset Password</button>
+                </form>
+                <p id="reset-message" class="login-error-message"></p>
+                <div class="form-footer-link">
+                    <a href="#" class="show-login">Back to Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="login.js"></script>
+</body>
+</html>
